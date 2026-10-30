@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traveltricks Holidays - Enterprise CRM</title>
+    <title>Traveltricks Holidays - Enterprise CRM & Management Console</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,12 +12,12 @@
         <!-- Sidebar -->
         <aside class="w-64 bg-slate-800 border-r border-slate-700 flex flex-col">
             <div class="p-5 border-b border-slate-700">
-                <h1 class="text-xl font-bold text-amber-400">Traveltricks</h1>
-                <p class="text-xs text-slate-400">Enterprise CRM Console</p>
+                <h1 class="text-xl font-bold text-amber-400">Traveltricks Holidays</h1>
+                <p class="text-xs text-slate-400">Enterprise CRM & Management Console</p>
             </div>
             <nav class="flex-1 p-4 space-y-2">
                 <button onclick="switchTab('dashboard')" id="btn-dashboard" class="w-full flex items-center space-x-3 px-4 py-2.5 rounded-lg bg-amber-500 text-slate-900 font-semibold transition">
-                    <i class="fa-solid.fa-chart-pie"></i><span>Dashboard</span>
+                    <i class="fa-solid fa-chart-pie"></i><span>Dashboard</span>
                 </button>
                 <button onclick="switchTab('pipeline')" id="btn-pipeline" class="w-full flex items-center space-x-3 px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-700 transition">
                     <i class="fa-solid fa-suitcase"></i><span>Booking Pipeline</span>
@@ -40,7 +40,7 @@
             <header class="bg-slate-800 border-b border-slate-700 px-6 py-4 flex justify-between items-center sticky top-0 z-50">
                 <h2 id="page-title" class="text-xl font-bold text-amber-400">Dashboard Overview</h2>
                 <div class="flex items-center space-x-3">
-                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs rounded-full border border-emerald-500/20 font-medium">Live System</span>
+                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs rounded-full border border-emerald-500/20 font-medium"><i class="fa-solid fa-circle text-[8px] mr-1 animate-pulse"></i> Live System</span>
                 </div>
             </header>
 
@@ -51,28 +51,63 @@
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                         <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
                             <p class="text-xs text-slate-400">Total Bookings Value</p>
-                            <h3 class="text-2xl font-bold text-white mt-1">₹0</h3>
-                            <span class="text-xs text-emerald-400">+0% this month</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">₹4,85,000</h3>
+                            <span class="text-xs text-emerald-400">+18% this month</span>
                         </div>
                         <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
                             <p class="text-xs text-slate-400">Estimated Net Profit</p>
-                            <h3 class="text-2xl font-bold text-white mt-1">₹0</h3>
-                            <span class="text-xs text-slate-400">Margin: 0%</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">₹1,12,000</h3>
+                            <span class="text-xs text-slate-400">Avg. 23.0% margin</span>
                         </div>
                         <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
                             <p class="text-xs text-slate-400">Pending Payments</p>
-                            <h3 class="text-2xl font-bold text-white mt-1">₹0</h3>
-                            <span class="text-xs text-amber-400">0 clearances</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">₹1,45,000</h3>
+                            <span class="text-xs text-amber-400">3 upcoming clearances</span>
                         </div>
                         <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
                             <p class="text-xs text-slate-400">Active Leads</p>
-                            <h3 class="text-2xl font-bold text-white mt-1">0</h3>
-                            <span class="text-xs text-slate-400">Ready to follow-up</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">12</h3>
+                            <span class="text-xs text-slate-400">4 required follow-up today</span>
                         </div>
                     </div>
+
                     <div class="bg-slate-800 p-5 rounded-xl border border-slate-700">
                         <h3 class="text-lg font-semibold mb-4 text-amber-400">Active Trip Pipeline Summary</h3>
-                        <p class="text-sm text-slate-400">No active bookings found. Aap apna data yahan add kar sakte hain.</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm text-slate-300">
+                                <thead class="bg-slate-700/50 text-xs uppercase text-slate-400">
+                                    <tr>
+                                        <th class="p-3">Client</th>
+                                        <th class="p-3">Destination</th>
+                                        <th class="p-3">Travel Dates</th>
+                                        <th class="p-3">Agent</th>
+                                        <th class="p-3">Package Cost</th>
+                                        <th class="p-3">Net Margin</th>
+                                        <th class="p-3">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-700">
+                                    <tr>
+                                        <td class="p-3 font-medium text-white">Vikram Malhotra</td>
+                                        <td class="p-3">Kashmir 6D/5N</td>
+                                        <td class="p-3">12 Nov - 17 Nov</td>
+                                        <td class="p-3">Rahul Sharma</td>
+                                        <td class="p-3">₹85,000</td>
+                                        <td class="p-3 text-emerald-400">₹22,000</td>
+                                        <td class="p-3"><span class="px-2 py-1 bg-emerald-500/10 text-emerald-400 rounded text-xs">Confirmed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-medium text-white">Ananya Roy</td>
+                                        <td class="p-3">Bali Honeymoon</td>
+                                        <td class="p-3">20 Nov - 26 Nov</td>
+                                        <td class="p-3">Priya Singh</td>
+                                        <td class="p-3">₹1,40,000</td>
+                                        <td class="p-3 text-emerald-400">₹31,000</td>
+                                        <td class="p-3"><span class="px-2 py-1 bg-amber-500/10 text-amber-400 rounded text-xs">Quotation Sent</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -80,7 +115,24 @@
                 <div id="tab-pipeline" class="hidden space-y-6">
                     <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
                         <h3 class="text-xl font-bold text-amber-400 mb-2">Booking Pipeline Management</h3>
-                        <p class="text-sm text-slate-300">Yahan aap apni sari bookings aur leads ko track aur manage kar sakte hain.</p>
+                        <p class="text-sm text-slate-300 mb-4">Manage and track all customer leads, trip stages, and confirmed bookings.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-slate-700/40 p-4 rounded-lg border border-slate-600">
+                                <h4 class="font-semibold text-amber-300 mb-2">New Leads (5)</h4>
+                                <p class="text-xs text-slate-400 mb-2">Aarav Mehta - Dubai Trip</p>
+                                <p class="text-xs text-slate-400">Neha Gupta - Maldives Package</p>
+                            </div>
+                            <div class="bg-slate-700/40 p-4 rounded-lg border border-slate-600">
+                                <h4 class="font-semibold text-amber-300 mb-2">Quotations Sent (4)</h4>
+                                <p class="text-xs text-slate-400 mb-2">Ananya Roy - Bali Honeymoon</p>
+                                <p class="text-xs text-slate-400">Rohan Verma - Himachal Tour</p>
+                            </div>
+                            <div class="bg-slate-700/40 p-4 rounded-lg border border-slate-600">
+                                <h4 class="font-semibold text-amber-300 mb-2">Confirmed Bookings (3)</h4>
+                                <p class="text-xs text-slate-400 mb-2">Vikram Malhotra - Kashmir</p>
+                                <p class="text-xs text-slate-400">Sunita Rao - Kerala Backwaters</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -88,7 +140,29 @@
                 <div id="tab-invoicing" class="hidden space-y-6">
                     <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
                         <h3 class="text-xl font-bold text-amber-400 mb-2">Invoicing & Profit Center</h3>
-                        <p class="text-sm text-slate-300">Clients ke liye invoices generate karein aur profit margins track karein.</p>
+                        <p class="text-sm text-slate-300 mb-4">Track client payments, vendor payouts, and net profit margins.</p>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+                                <div>
+                                    <p class="font-medium text-white">Invoice #TT-2026-089 (Vikram Malhotra)</p>
+                                    <p class="text-xs text-slate-400">Kashmir Tour Package</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-bold text-amber-400">₹85,000</p>
+                                    <span class="text-xs text-emerald-400">Paid</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+                                <div>
+                                    <p class="font-medium text-white">Invoice #TT-2026-090 (Ananya Roy)</p>
+                                    <p class="text-xs text-slate-400">Bali Honeymoon Package</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-bold text-amber-400">₹1,40,000</p>
+                                    <span class="text-xs text-amber-400">Pending</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -96,7 +170,12 @@
                 <div id="tab-itinerary" class="hidden space-y-6">
                     <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
                         <h3 class="text-xl font-bold text-amber-400 mb-2">Itinerary Builder</h3>
-                        <p class="text-sm text-slate-300">Custom travel packages aur day-wise itineraries yahan design karein.</p>
+                        <p class="text-sm text-slate-300 mb-4">Create customized day-wise itineraries for clients instantly.</p>
+                        <div class="p-4 bg-slate-700/30 rounded-lg border border-slate-600">
+                            <h4 class="font-semibold text-white mb-1">Sample: Kashmir 6 Days / 5 Nights</h4>
+                            <p class="text-xs text-slate-400 mb-3">Day 1: Arrival in Srinagar & Houseboat Stay | Day 2: Srinagar to Gulmarg Day Trip...</p>
+                            <button class="px-3 py-1.5 bg-amber-500 text-slate-900 rounded font-semibold text-xs">Create New Itinerary</button>
+                        </div>
                     </div>
                 </div>
 
@@ -104,7 +183,22 @@
                 <div id="tab-whatsapp" class="hidden space-y-6">
                     <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
                         <h3 class="text-xl font-bold text-amber-400 mb-2">WhatsApp Engine & Broadcast</h3>
-                        <p class="text-sm text-slate-300">Clients ko automated updates, quotes aur payment reminders WhatsApp par bhejein.</p>
+                        <p class="text-sm text-slate-300 mb-4">Send instant quotes, payment links, and booking confirmations via WhatsApp.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-slate-700/30 rounded-lg border border-slate-600">
+                                <h4 class="font-semibold text-emerald-400 mb-2"><i class="fa-brands fa-whatsapp mr-1"></i> Quick Message Templates</h4>
+                                <ul class="text-xs text-slate-300 space-y-2">
+                                    <li>• Payment Reminder Template</li>
+                                    <li>• Trip Itinerary Sharing Template</li>
+                                    <li>• Welcome & Voucher Dispatch Template</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-slate-700/30 rounded-lg border border-slate-600">
+                                <h4 class="font-semibold text-amber-300 mb-2">Send Broadcast</h4>
+                                <input type="text" placeholder="Enter Client Phone Number" class="w-full p-2 mb-2 bg-slate-800 border border-slate-600 rounded text-xs text-white">
+                                <button class="w-full py-2 bg-emerald-600 text-white rounded text-xs font-semibold hover:bg-emerald-500 transition">Send WhatsApp Update</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,26 +207,22 @@
 
     <script>
         function switchTab(tabId) {
-            // Hide all tabs
             document.getElementById('tab-dashboard').classList.add('hidden');
             document.getElementById('tab-pipeline').classList.add('hidden');
             document.getElementById('tab-invoicing').classList.add('hidden');
             document.getElementById('tab-itinerary').classList.add('hidden');
             document.getElementById('tab-whatsapp').classList.add('hidden');
 
-            // Reset buttons style
             const buttons = ['dashboard', 'pipeline', 'invoicing', 'itinerary', 'whatsapp'];
             buttons.forEach(b => {
                 const btn = document.getElementById('btn-' + b);
                 btn.className = "w-full flex items-center space-x-3 px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-700 transition";
             });
 
-            // Show selected tab and highlight button
             document.getElementById('tab-' + tabId).classList.remove('hidden');
             const activeBtn = document.getElementById('btn-' + tabId);
             activeBtn.className = "w-full flex items-center space-x-3 px-4 py-2.5 rounded-lg bg-amber-500 text-slate-900 font-semibold transition";
 
-            // Update header title
             const titles = {
                 'dashboard': 'Dashboard Overview',
                 'pipeline': 'Booking Pipeline Management',
